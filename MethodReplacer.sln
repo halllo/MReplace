@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MReplace", "MReplace\MReplace.csproj", "{B7B7565F-EFD3-448C-9AF7-6146F798030C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodTests", "MethodTests\MethodTests.csproj", "{EDD15DF3-C28A-4A1A-AC4F-5A3F5048D856}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{31E6274A-8FB6-47DD-B6F0-EE2AEB9F4F7D}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		MethodReplacer.vsmdi = MethodReplacer.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://win-6mfllenrl8c:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MethodReplacer\\MethodReplacer.csproj
+		SccProjectName1 = MethodReplacer
+		SccLocalPath1 = MethodReplacer
+		SccProjectUniqueName2 = MethodTests\\MethodTests.csproj
+		SccProjectName2 = MethodTests
+		SccLocalPath2 = MethodTests
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = MethodReplacer.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7B7565F-EFD3-448C-9AF7-6146F798030C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B7B7565F-EFD3-448C-9AF7-6146F798030C}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B7B7565F-EFD3-448C-9AF7-6146F798030C}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{B7B7565F-EFD3-448C-9AF7-6146F798030C}.Debug|x86.ActiveCfg = Debug|x86
+		{B7B7565F-EFD3-448C-9AF7-6146F798030C}.Debug|x86.Build.0 = Debug|x86
+		{B7B7565F-EFD3-448C-9AF7-6146F798030C}.Release|Any CPU.ActiveCfg = Release|x86
+		{B7B7565F-EFD3-448C-9AF7-6146F798030C}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{B7B7565F-EFD3-448C-9AF7-6146F798030C}.Release|Mixed Platforms.Build.0 = Release|x86
+		{B7B7565F-EFD3-448C-9AF7-6146F798030C}.Release|x86.ActiveCfg = Release|x86
+		{B7B7565F-EFD3-448C-9AF7-6146F798030C}.Release|x86.Build.0 = Release|x86
+		{EDD15DF3-C28A-4A1A-AC4F-5A3F5048D856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDD15DF3-C28A-4A1A-AC4F-5A3F5048D856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDD15DF3-C28A-4A1A-AC4F-5A3F5048D856}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EDD15DF3-C28A-4A1A-AC4F-5A3F5048D856}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EDD15DF3-C28A-4A1A-AC4F-5A3F5048D856}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EDD15DF3-C28A-4A1A-AC4F-5A3F5048D856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD15DF3-C28A-4A1A-AC4F-5A3F5048D856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDD15DF3-C28A-4A1A-AC4F-5A3F5048D856}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EDD15DF3-C28A-4A1A-AC4F-5A3F5048D856}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EDD15DF3-C28A-4A1A-AC4F-5A3F5048D856}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
