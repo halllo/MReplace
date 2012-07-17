@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace MReplace
 {
-    public class PropertyReplacement<T, R> : IDisposable
+    public class PropertyReplacement : IDisposable
     {
         private static MethodBase Location(LambdaExpression locator)
         {
@@ -17,23 +17,18 @@ namespace MReplace
         MethodBase _method;
         object _oldPointer;
 
-        internal PropertyReplacement(Expression<Func<R>> property)
+        internal PropertyReplacement(LambdaExpression property)
         {
             _method = Location(property);
         }
 
-        internal PropertyReplacement(Expression<Func<T, R>> property)
-        {
-            _method = Location(property);
-        }
-
-        public IDisposable With(Expression<Func<R>> property)
+        public IDisposable With(Expression<Func<object>> property)
         {
             _oldPointer = _method.ReplaceWith(Location(property));
             return this;
         }
 
-        public IDisposable With(Expression<Func<T, R>> property)
+        public IDisposable With<T>(Expression<Func<T, object>> property)
         {
             _oldPointer = _method.ReplaceWith(Location(property));
             return this;

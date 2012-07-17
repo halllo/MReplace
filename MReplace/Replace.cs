@@ -5,24 +5,24 @@ namespace MReplace
 {
     public static class Replace
     {
-        public static PropertyReplacement<object, R> Property<R>(Expression<Func<R>> property)
+        public static PropertyReplacement Property(Expression<Func<object>> property)
         {
-            return new PropertyReplacement<object, R>(property);
+            return new PropertyReplacement(property);
         }
 
-        public static PropertyReplacement<T, object> Property<T>(Expression<Func<T, object>> property)
+        public static PropertyReplacement Property<T>(Expression<Func<T, object>> property)
         {
-            return new PropertyReplacement<T, object>(property);
+            return new PropertyReplacement(property);
         }
 
-        public static MethodReplacement<object> Method(Expression<Action> method)
+        public static MethodReplacement Method(Expression<Action> method)
         {
-            return new MethodReplacement<object>(method);
+            return new MethodReplacement(method);
         }
 
-        public static MethodReplacement<T> Method<T>(Expression<Action<T>> method)
+        public static MethodReplacement Method<T>(Expression<Action<T>> method)
         {
-            return new MethodReplacement<T>(method);
+            return new MethodReplacement(method);
         }
     }
 }

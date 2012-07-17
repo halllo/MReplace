@@ -9,20 +9,20 @@ namespace MethodTests
         [TestMethod]
         public void Replace_StaticMethod()
         {
-            Assert.AreEqual(2, ClassUnderTest.StaticMethod2());
-            using (Replace.Method(() => ClassUnderTest.StaticMethod2()).With(() => ClassUnderTest.StaticMethod1()))
+            Assert.AreEqual(2, ClassUnderTest2.StaticMethod2());
+            using (Replace.Method(() => ClassUnderTest2.StaticMethod2()).With(() => ClassUnderTest1.StaticMethod1()))
             {
-                Assert.AreEqual(1, ClassUnderTest.StaticMethod2());
+                Assert.AreEqual(1, ClassUnderTest2.StaticMethod2());
             }
-            Assert.AreEqual(2, ClassUnderTest.StaticMethod2());
+            Assert.AreEqual(2, ClassUnderTest2.StaticMethod2());
         }
 
         [TestMethod]
         public void Replace_InstanceMethod()
         {
-            var tc = new ClassUnderTest();
+            var tc = new ClassUnderTest2();
             Assert.AreEqual(2, tc.Method2());
-            using (Replace.Method<ClassUnderTest>(c => c.Method2()).With(c => c.Method1()))
+            using (Replace.Method<ClassUnderTest2>(c => c.Method2()).With<ClassUnderTest1>(c => c.Method1()))
             {
                 Assert.AreEqual(1, tc.Method2());
             }
@@ -32,20 +32,20 @@ namespace MethodTests
         [TestMethod]
         public void Replace_StaticProperty()
         {
-            Assert.AreEqual(2, ClassUnderTest.StaticProperty2);
-            using (Replace.Property(() => ClassUnderTest.StaticProperty2).With(() => ClassUnderTest.StaticProperty1))
+            Assert.AreEqual(2, ClassUnderTest2.StaticProperty2);
+            using (Replace.Property(() => ClassUnderTest2.StaticProperty2).With(() => ClassUnderTest1.StaticProperty1))
             {
-                Assert.AreEqual(1, ClassUnderTest.StaticProperty2);
+                Assert.AreEqual(1, ClassUnderTest2.StaticProperty2);
             }
-            Assert.AreEqual(2, ClassUnderTest.StaticProperty2);
+            Assert.AreEqual(2, ClassUnderTest2.StaticProperty2);
         }
 
         [TestMethod]
         public void Replace_InstanceProperty()
         {
-            var tc = new ClassUnderTest();
+            var tc = new ClassUnderTest2();
             Assert.AreEqual(2, tc.Property2);
-            using (Replace.Property<ClassUnderTest>(c => c.Property2).With(c => c.Property1))
+            using (Replace.Property<ClassUnderTest2>(c => c.Property2).With<ClassUnderTest1>(c => c.Property1))
             {
                 Assert.AreEqual(1, tc.Property2);
             }
@@ -57,7 +57,7 @@ namespace MethodTests
         {
             using (Replace.Property(() => System.DateTime.Now).With(() => FirstJanuaray2000))
             {
-                Assert.AreEqual(2000, System.DateTime.Now.Year);
+                Assert.AreEqual(2000, System.DateTime.Now.Year, "ngened methods dont work yet");
             }
         }
 
