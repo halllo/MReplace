@@ -1,7 +1,7 @@
 MReplace
 ========
 
-Allows for replacement of instance and static methods and properties without any profiler. I use Ziad Elmalki's technique for the replacing of two MethodBase objects (http://www.codeproject.com/Articles/37549/CLR-Injection-Runtime-Method-Replacer).
+Supports replacing public and private instance methods, static methods and properties without any profiler. I use Ziad Elmalki's technique for the replacing of two MethodBase objects (http://www.codeproject.com/Articles/37549/CLR-Injection-Runtime-Method-Replacer).
 
 ```csharp
 [TestMethod]
@@ -25,6 +25,18 @@ public void Replace_InstanceMethod()
         Assert.AreEqual(1, tc.Method2());
     }
     Assert.AreEqual(2, tc.Method2());
+}
+
+[TestMethod]
+public void Replace_PrivateInstanceMethod()
+{
+    var tc = new ClassUnderTest2();
+    Assert.AreEqual(2, tc.CallPrivateMethod2());
+    using (Replace.Method<ClassUnderTest2>("PrivateMethod2").With<ClassUnderTest1>("PrivateMethod1"))
+    {
+        Assert.AreEqual(1, tc.CallPrivateMethod2());
+    }
+    Assert.AreEqual(2, tc.CallPrivateMethod2());
 }
 
 [TestMethod]
